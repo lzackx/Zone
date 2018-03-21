@@ -16,20 +16,17 @@
 
 int function(int a, int b, int c) {
     
-    NSLog(@"%d,%d,%d", a, b, c);
     return a + b + c;
 }
 
 - (int)methodWithA:(int)a b:(int)b c:(int)c {
     
-    NSLog(@"%d,%d,%d", a, b, c);
     return a + b + c;
 }
 
 - (int)methodWithX:(int)x y:(int)y z:(int)z {
     
     function(x, y, z);
-    NSLog(@"%d,%d,%d", x, y, z);
     return x + y + z;
 }
 
