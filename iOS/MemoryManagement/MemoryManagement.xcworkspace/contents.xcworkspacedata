@@ -7,4 +7,10 @@
    <FileRef
       location = "group:CategoryAndExtension/CategoryAndExtension.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Property/Property.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Block/Block.xcodeproj">
+   </FileRef>
 </Workspace>
