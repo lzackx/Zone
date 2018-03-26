@@ -33,6 +33,6 @@
 // 对于BOOL属性，默认的getter就是添加is前缀
 @property (readonly, getter=isRb) BOOL rb;
 
-- (instancetype)init
+- (instancetype)init;
 
 @end

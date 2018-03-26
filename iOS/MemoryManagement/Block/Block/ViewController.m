@@ -41,7 +41,7 @@
      */
     __block int j = 0;
     void (^block1)(void) = ^{
-        NSLog(@"j is: %i", i);
+        NSLog(@"j is: %i", j);
     };
     
     j = 1;
