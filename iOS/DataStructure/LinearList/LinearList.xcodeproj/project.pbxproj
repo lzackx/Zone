@@ -32,6 +32,7 @@
 		A7D0E854206B37A000BD916D /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 		A7D0E855206B37A000BD916D /* list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
 		A7D0E859206B83AF00BD916D /* array_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array_private.h; sourceTree = "<group>"; };
+		A7D0E85A206B9DF000BD916D /* list_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list_private.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D0E854206B37A000BD916D /* list.h */,
+				A7D0E85A206B9DF000BD916D /* list_private.h */,
 				A7D0E855206B37A000BD916D /* list.c */,
 			);
 			path = list;
