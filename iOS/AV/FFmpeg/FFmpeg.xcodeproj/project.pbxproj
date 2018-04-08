@@ -663,14 +663,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75MG4PTYQ8;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/FFmpeg/FFmpeg/arm64/include/**";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/FFmpeg/FFmpeg/include/**";
 				INFOPLIST_FILE = FFmpeg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg/arm64/lib/**";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg/lib/**";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzackx.FFmpeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -685,14 +685,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75MG4PTYQ8;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/FFmpeg/FFmpeg/arm64/include/**";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/FFmpeg/FFmpeg/include/**";
 				INFOPLIST_FILE = FFmpeg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg/arm64/lib/**";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg/lib/**";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzackx.FFmpeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

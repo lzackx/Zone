@@ -8,6 +8,7 @@
 
 #import "FFmpegTest.h"
 #import "avcodec.h"
+#import "avformat.h"
 
 @implementation FFmpegTest
 
