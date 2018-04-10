@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Ivar&amp;Property/Ivar&amp;Property.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Message/Message.xcodeproj">
+   </FileRef>
 </Workspace>
