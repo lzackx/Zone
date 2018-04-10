@@ -25,18 +25,23 @@
 
 - (void)testIvar {
     
+    Ivar publicIvar = class_getInstanceVariable([TestObject class], "_publicString");
+    NSLog(@"public Ivar name: %s, type encoding: %s, offset: %ti", ivar_getName(publicIvar), ivar_getTypeEncoding(publicIvar), ivar_getOffset(publicIvar));
+    
     unsigned int outCount = 0;
     Ivar *ivarList = class_copyIvarList([TestObject class], &outCount);
     for (int i = 0; i < outCount; i++) {
         Ivar ivar = ivarList[i];
         const char *name = ivar_getName(ivar);
         const char *typeEncoding = ivar_getTypeEncoding(ivar);
-        NSLog(@"ivar name: %s, type encoding: %s", name, typeEncoding);
+        long offset = ivar_getOffset(ivar);    // 可以注意到，这里并非强转，用的是long，而非int，也就是说objc_ivar结构体并非如所看到的一样。
+        NSLog(@"ivar name: %s, type encoding: %s, offset: %ti", name, typeEncoding, offset);
     }
     free(ivarList);
     /*
-     ivar name: _publicString, type encoding: @"NSString"
-     ivar name: _privateString, type encoding: @"NSString"
+     public Ivar name: _publicString, type encoding: @"NSString", offset: 8
+     ivar name: _publicString, type encoding: @"NSString", offset: 8
+     ivar name: _privateString, type encoding: @"NSString", offset: 16
      */
 }
 
