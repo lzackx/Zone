@@ -13,6 +13,8 @@
 		A7E3ABCD207C9468005B9B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E3ABCC207C9468005B9B01 /* Assets.xcassets */; };
 		A7E3ABD0207C9468005B9B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E3ABCE207C9468005B9B01 /* LaunchScreen.storyboard */; };
 		A7E3ABD3207C9468005B9B01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E3ABD2207C9468005B9B01 /* main.m */; };
+		A7E3ABDB207C96DE005B9B01 /* MessagingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E3ABDA207C96DE005B9B01 /* MessagingObject.m */; };
+		A7E3ABDE207D9CFB005B9B01 /* SurrogateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E3ABDD207D9CFB005B9B01 /* SurrogateObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		A7E3ABCF207C9468005B9B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7E3ABD1207C9468005B9B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7E3ABD2207C9468005B9B01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A7E3ABD9207C96DE005B9B01 /* MessagingObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagingObject.h; sourceTree = "<group>"; };
+		A7E3ABDA207C96DE005B9B01 /* MessagingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagingObject.m; sourceTree = "<group>"; };
+		A7E3ABDC207D9CFB005B9B01 /* SurrogateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurrogateObject.h; sourceTree = "<group>"; };
+		A7E3ABDD207D9CFB005B9B01 /* SurrogateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SurrogateObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				A7E3ABC4207C9467005B9B01 /* AppDelegate.m */,
 				A7E3ABC6207C9467005B9B01 /* ViewController.h */,
 				A7E3ABC7207C9467005B9B01 /* ViewController.m */,
+				A7E3ABD9207C96DE005B9B01 /* MessagingObject.h */,
+				A7E3ABDA207C96DE005B9B01 /* MessagingObject.m */,
+				A7E3ABDC207D9CFB005B9B01 /* SurrogateObject.h */,
+				A7E3ABDD207D9CFB005B9B01 /* SurrogateObject.m */,
 				A7E3ABC9207C9467005B9B01 /* Main.storyboard */,
 				A7E3ABCC207C9468005B9B01 /* Assets.xcassets */,
 				A7E3ABCE207C9468005B9B01 /* LaunchScreen.storyboard */,
@@ -142,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E3ABC8207C9467005B9B01 /* ViewController.m in Sources */,
+				A7E3ABDE207D9CFB005B9B01 /* SurrogateObject.m in Sources */,
+				A7E3ABDB207C96DE005B9B01 /* MessagingObject.m in Sources */,
 				A7E3ABD3207C9468005B9B01 /* main.m in Sources */,
 				A7E3ABC5207C9467005B9B01 /* AppDelegate.m in Sources */,
 			);
@@ -284,6 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Message/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Message/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
