@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Message/Message.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:MethodSwizzling/MethodSwizzling.xcodeproj">
+   </FileRef>
 </Workspace>
