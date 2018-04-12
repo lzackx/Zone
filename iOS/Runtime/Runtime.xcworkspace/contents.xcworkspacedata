@@ -10,4 +10,7 @@
    <FileRef
       location = "group:MethodSwizzling/MethodSwizzling.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:RuntimeKVO/RuntimeKVO.xcodeproj">
+   </FileRef>
 </Workspace>
