@@ -21,10 +21,9 @@
     [self testRunLoopTimer];
     // Secondary thread
     [self testAsyncRunLoopTimer];
-    
+    //
 }
-    
-// MARK: Timer
+
 - (void)testAsyncRunLoopTimer {
     
     __weak id weakSelf = self;
@@ -46,15 +45,45 @@
     
 - (void)testRunLoopTimer {
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:@"scheduled 1" repeats:YES];
+    // Usage 1
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:@"usage 1" repeats:YES];
+
+    // Usage 2
+    NSTimer *timer2 = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:@"usage 2" repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer2 forMode:NSRunLoopCommonModes];
     
-    NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:@"scheduled 2" repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    // Usage 3
+    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+    NSString *info = @"usage 3";
+    CFRunLoopTimerContext timerContext = {0, (__bridge void *)(info), NULL, NULL, NULL};
+    CFRunLoopTimerRef timer3 = CFRunLoopTimerCreate(kCFAllocatorDefault,
+                                                    0.1,
+                                                    1,
+                                                    0,
+                                                    0,
+                                                    &runLoopCallBack,
+                                                    &timerContext);
+    CFRunLoopAddTimer(runLoop, timer3, kCFRunLoopCommonModes);
     
 }
     
 - (void)timerFireMethod:(NSTimer *)timer {
-    NSLog(@"I am from %s, mode: %@, userInfo: %@", __func__, [[NSRunLoop currentRunLoop] currentMode], timer.userInfo);
+    NSLog(@"I am from %s, userInfo: %@", __func__, timer.userInfo);
+}
+
+void runLoopCallBack(CFRunLoopTimerRef timer, void *info) {
+    
+    printf("I am from %s, info: %s\n", __func__, [(__bridge NSString *)info UTF8String]);
 }
     
 @end
+
+
+
+
+
+
+
+
+
+
