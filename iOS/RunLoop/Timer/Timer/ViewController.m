@@ -18,19 +18,19 @@
     [super viewDidLoad];
     
     // Main thread
-    [self testRunLoopTimer];
+    [self runMainRunLoopTimer];
     // Secondary thread
-    [self testAsyncRunLoopTimer];
+    [self runSecondaryRunLoopTimer];
     //
 }
 
-- (void)testAsyncRunLoopTimer {
+- (void)runSecondaryRunLoopTimer {
     
     __weak id weakSelf = self;
     dispatch_queue_t queue = dispatch_queue_create("async_queue", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async(queue, ^{
         
-        [weakSelf testRunLoopTimer];
+        [weakSelf runMainRunLoopTimer];
         /*
          这一行代码就很灵性，默认情况下，RunLoop对象在子线程中是没有创建对象的，调用currentRunLoop的时候会创建并返回，
          原文是：If a run loop does not yet exist for the thread, one is created and returned.
@@ -43,7 +43,7 @@
     });
 }
     
-- (void)testRunLoopTimer {
+- (void)runMainRunLoopTimer {
     
     // Usage 1
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:@"usage 1" repeats:YES];
