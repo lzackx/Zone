@@ -21,19 +21,18 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self runSource0];
-    
 }
 
 void RunLoopSourceScheduleRoutine (void *info, CFRunLoopRef rl, CFStringRef mode) {
-    NSLog(@"Schedule routine: source is added to runloop");
+    NSLog(@"%s: source is added to runloop in %@, info: %@", __func__, mode, info);
 }
 
 void RunLoopSourceCancelRoutine (void *info, CFRunLoopRef rl, CFStringRef mode) {
-    NSLog(@"Cancel Routine: source removed from runloop");
+    NSLog(@"%s: source removed from runloop in %@, info: %@", __func__, mode, info);
 }
 
 void RunLoopSourcePerformRoutine (void *info) {
-    NSLog(@"Perform Routine: source has fired");
+    NSLog(@"%s: source has fired, info: %@", __func__, info);
 }
 
 - (CFRunLoopSourceRef)createSource0 {
@@ -86,7 +85,6 @@ void RunLoopSourcePerformRoutine (void *info) {
     self.source0 = [self createSource0];
     [self addToCurrentRunLoopWithSource0:self.source0];
     [self fireSource0:self.source0];
-
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

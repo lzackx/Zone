@@ -72,8 +72,7 @@
 }
 
 void runLoopCallBack(CFRunLoopTimerRef timer, void *info) {
-    
-    printf("I am from %s, info: %s\n", __func__, [(__bridge NSString *)info UTF8String]);
+    NSLog(@"I am from %s, info: %@", __func__, info);
 }
     
 @end
