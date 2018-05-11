@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Source0_NonPortBased/Source0_NonPortBased.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Source1_PortBased/Source1_PortBased.xcodeproj">
+   </FileRef>
 </Workspace>
