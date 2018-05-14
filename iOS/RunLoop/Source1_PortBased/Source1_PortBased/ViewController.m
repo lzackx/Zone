@@ -27,9 +27,181 @@
     [self runCoreFoundationSource1];
 }
 
+- (void)createCoreFoundationLocalPortWithPortName:(CFStringRef *)portName {
+    
+    // Create a local port for receiving responses.
+    /*
+     struct __CFMessagePort {
+         CFRuntimeBase _base;
+         CFLock_t _lock;
+         CFStringRef _name;
+         CFMachPortRef _port;        // immutable; invalidated
+         CFMutableDictionaryRef _replies;
+         int32_t _convCounter;
+         int32_t _perPID;            // zero if not per-pid, else pid
+         CFMachPortRef _replyPort;        // only used by remote port; immutable once created; invalidated
+         CFRunLoopSourceRef _source;        // only used by local port; immutable once created; invalidated
+         dispatch_source_t _dispatchSource;  // only used by local port; invalidated
+         dispatch_queue_t _dispatchQ;    // only used by local port
+         CFMessagePortInvalidationCallBack _icallout;
+         CFMessagePortCallBack _callout;    // only used by local port; immutable
+         CFMessagePortCallBackEx _calloutEx;    // only used by local port; immutable
+         CFMessagePortContext _context;    // not part of remote port; immutable; invalidated
+     };
+     */
+    CFMessagePortRef messagePort;
+    /*
+     struct __CFRunLoopSource {
+         CFRuntimeBase _base;
+         uint32_t _bits;
+         pthread_mutex_t _lock;
+         CFIndex _order;            // immutable
+         CFMutableBagRef _runLoops;
+         union {
+             CFRunLoopSourceContext version0;    // immutable, except invalidation
+             CFRunLoopSourceContext1 version1;    // immutable, except invalidation
+         } _context;
+     };
+     */
+    CFRunLoopSourceRef source1;
+    /*
+     typedef struct {
+         CFIndex    version;
+         void *    info;
+         const void *(*retain)(const void *info);
+         void    (*release)(const void *info);
+         CFStringRef    (*copyDescription)(const void *info);
+     } CFMessagePortContext;
+     */
+    CFMessagePortContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
+    Boolean shouldFreeInfo;
+    // Create a string with the port name.
+    // Create the port.
+    messagePort = CFMessagePortCreateLocal(NULL,
+                                           *portName,
+                                           &coreFoundationSourceHandler,
+                                           &context,
+                                           &shouldFreeInfo);
+    
+    if (messagePort != NULL) {
+        // The port was successfully created.
+        // Now create a run loop source for it.
+        source1 = CFMessagePortCreateRunLoopSource(NULL, messagePort, 0);
+        if (source1) {
+            // Add the source to the current run loop.
+            CFRunLoopAddSource(CFRunLoopGetCurrent(), source1, kCFRunLoopDefaultMode);
+            // Once installed, these can be freed.
+            CFRelease(messagePort);
+        }
+    }
+}
+
+CFDataRef coreFoundationSourceHandler(CFMessagePortRef local,
+                                      SInt32 msgid,
+                                      CFDataRef data,
+                                      void* info) {
+    NSLog(@"%i", msgid);
+    CFMessagePortRef messagePort;
+    CFStringRef portName;
+    CFIndex bufferLength = CFDataGetLength(data);
+    UInt8* buffer = CFAllocatorAllocate(NULL, bufferLength, 0);
+    CFDataGetBytes(data, CFRangeMake(0, bufferLength), buffer);
+    portName = CFStringCreateWithBytes (NULL, buffer, bufferLength, kCFStringEncodingASCII, FALSE);
+    // You must obtain a remote message port by name.
+    messagePort = CFMessagePortCreateRemote(NULL, (CFStringRef)portName);
+    
+    NSLog(@"portName: %@, data: %@, info: %@", portName, [[NSString alloc] initWithData:(__bridge NSData *)data encoding:NSUTF8StringEncoding], info);
+    
+    // Clean up.
+    CFRelease(portName);
+    CFAllocatorDeallocate(NULL, buffer);
+    return NULL;
+}
+
+- (void)createCoreFoundationRemotePort {
+    
+    // Create the remote port
+    CFMessagePortRef clientPort;
+    CFStringRef clientPortName = CFStringCreateWithFormat(NULL, NULL, CFSTR("com.lzackx.port.client"));
+    clientPort = CFMessagePortCreateRemote(NULL, clientPortName);
+    // Free the string that was passed in param.
+    CFRelease(clientPortName);
+    
+    // Create a local port
+    CFStringRef severPortName = CFStringCreateWithFormat(NULL, NULL, CFSTR("com.lzackx.port.server"));
+    // Store the port in this thread’s context info for later reference.
+    CFMessagePortContext context = {0, clientPort, NULL, NULL, NULL};
+    Boolean shouldFreeInfo;
+    CFMessagePortRef serverPort = CFMessagePortCreateLocal(NULL,
+                                                       severPortName,
+                                                       &coreFoundationSourceHandler,
+                                                       &context,
+                                                       &shouldFreeInfo);
+    if (shouldFreeInfo) {
+        // Couldn't create a server port, so kill the thread.
+        return;
+    }
+    CFRunLoopSourceRef source1 = CFMessagePortCreateRunLoopSource(NULL, serverPort, 0);
+    if (!source1) {
+        // Couldn't create a local port, so kill the thread.
+        return;
+    }
+    // Add the source to the current run loop.
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), source1, kCFRunLoopDefaultMode);
+    // Once installed, these can be freed.
+    CFRelease(serverPort);
+    CFRelease(source1);
+}
+
+- (void)sendCoreFoundationMessageFromClientPortName:(CFStringRef *)clientPortName {
+    
+    // Package up the port name and send the message.
+    CFDataRef returnData = NULL;
+    CFDataRef outData;
+    CFMessagePortRef clientPort;
+    clientPort = CFMessagePortCreateRemote(NULL, *clientPortName);
+    if (!clientPort) {
+        return;
+    }
+    CFIndex stringLength = CFStringGetLength(*clientPortName);
+    UInt8* buffer = CFAllocatorAllocate(NULL, stringLength, 0);
+    
+    CFStringGetBytes(*clientPortName,
+                     CFRangeMake(0,stringLength),
+                     kCFStringEncodingASCII,
+                     0,
+                     FALSE,
+                     buffer,
+                     stringLength,
+                     NULL);
+    
+    
+    outData = CFDataCreate(NULL, buffer, stringLength);
+    CFMessagePortSendRequest(clientPort,
+                             1,
+                             outData,
+                             0.1,
+                             0.0,
+                             kCFRunLoopDefaultMode,
+                             &returnData);
+    
+    // Clean up thread data structures.
+    CFRelease(outData);
+    CFAllocatorDeallocate(NULL, buffer);
+    
+    // Enter the run loop.
+//    CFRunLoopRun();
+    
+}
+
 // MARK: Core Foundation
 - (void)runCoreFoundationSource1 {
     
+    CFStringRef clientPortName = CFStringCreateWithFormat(NULL, NULL, CFSTR("com.lzackx.port.client"));
+//    [self createCoreFoundationLocalPortWithPortName:&clientPortName];
+//    [self createCoreFoundationRemotePort];
+    [self sendCoreFoundationMessageFromClientPortName:&clientPortName];
+    CFRelease(clientPortName);
 }
 
 // MARK: Foundation
@@ -55,23 +227,23 @@
     /*
      typedef    struct
      {
-     mach_msg_bits_t    msgh_bits;
-     mach_msg_size_t    msgh_size;
-     mach_port_t        msgh_remote_port;
-     mach_port_t        msgh_local_port;
-     mach_port_name_t    msgh_voucher_port;
-     mach_msg_id_t        msgh_id;
+         mach_msg_bits_t    msgh_bits;
+         mach_msg_size_t    msgh_size;
+         mach_port_t        msgh_remote_port;
+         mach_port_t        msgh_local_port;
+         mach_port_name_t    msgh_voucher_port;
+         mach_msg_id_t        msgh_id;
      } mach_msg_header_t;
      
      typedef struct
      {
-     mach_msg_size_t msgh_descriptor_count;
+        mach_msg_size_t msgh_descriptor_count;
      } mach_msg_body_t;
      
      typedef struct
      {
-     mach_msg_header_t       header;
-     mach_msg_body_t         body;
+         mach_msg_header_t       header;
+         mach_msg_body_t         body;
      } mach_msg_base_t;
 
      */
