@@ -61,6 +61,13 @@ void observerCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity,
      };
      */
     NSLog(@"%s: observer = %@, activity = %lu, info = %@", __func__, observer, activity, info);
+    /* results
+     observerCallBack: observer = <CFRunLoopObserver 0x60400013bc60 [0x10f35cc80]>{valid = Yes, activities = 0xfffffff, repeats = Yes, order = 0, callout = observerCallBack (0x10de284a0), context = <CFRunLoopObserver context 0x7fd1de711910>}, activity = 2, info = <ViewController: 0x7fd1de711910>
+     observerCallBack: observer = <CFRunLoopObserver 0x60400013bc60 [0x10f35cc80]>{valid = Yes, activities = 0xfffffff, repeats = Yes, order = 0, callout = observerCallBack (0x10de284a0), context = <CFRunLoopObserver context 0x7fd1de711910>}, activity = 4, info = <ViewController: 0x7fd1de711910>
+     observerCallBack: observer = <CFRunLoopObserver 0x60400013bc60 [0x10f35cc80]>{valid = Yes, activities = 0xfffffff, repeats = Yes, order = 0, callout = observerCallBack (0x10de284a0), context = <CFRunLoopObserver context 0x7fd1de711910>}, activity = 32, info = <ViewController: 0x7fd1de711910>
+     observerCallBack: observer = <CFRunLoopObserver 0x60400013bc60 [0x10f35cc80]>{valid = Yes, activities = 0xfffffff, repeats = Yes, order = 0, callout = observerCallBack (0x10de284a0), context = <CFRunLoopObserver context 0x7fd1de711910>}, activity = 64, info = <ViewController: 0x7fd1de711910>
+     Fired
+     */
 }
 
 - (void)timerFired:(NSTimer *)timer {
