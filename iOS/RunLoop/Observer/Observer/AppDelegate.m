@@ -52,6 +52,10 @@
 
 - (void)runLoopLog {
     
+    /*
+     封装的原点，其实就是通过Core Foundation中的这函数来打印的
+     static CFStringRef __CFRunLoopCopyDescription(CFTypeRef cf)
+     */
     NSLog(@"Main Run Loop:\n%@", [NSRunLoop currentRunLoop]);
 }
 
