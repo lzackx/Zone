@@ -44,6 +44,7 @@
     if (observer) {
         CFRunLoopRef cfLoop = CFRunLoopGetCurrent();
         CFRunLoopAddObserver(cfLoop, observer, kCFRunLoopDefaultMode);
+        CFRelease(observer);
     }
 }
 

@@ -13,4 +13,7 @@
    <FileRef
       location = "group:Observer/Observer.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:IdleRun/IdleRun.xcodeproj">
+   </FileRef>
 </Workspace>

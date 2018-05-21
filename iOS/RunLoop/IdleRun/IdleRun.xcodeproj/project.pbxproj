@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A718C00720A2EBF7007EA5B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C00620A2EBF7007EA5B5 /* AppDelegate.m */; };
-		A718C00A20A2EBF7007EA5B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C00920A2EBF7007EA5B5 /* ViewController.m */; };
-		A718C00D20A2EBF7007EA5B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C00B20A2EBF7007EA5B5 /* Main.storyboard */; };
-		A718C00F20A2EBF8007EA5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A718C00E20A2EBF8007EA5B5 /* Assets.xcassets */; };
-		A718C01220A2EBF8007EA5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C01020A2EBF8007EA5B5 /* LaunchScreen.storyboard */; };
-		A718C01520A2EBF8007EA5B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C01420A2EBF8007EA5B5 /* main.m */; };
+		A741988220B2B28500665FCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A741988120B2B28500665FCA /* AppDelegate.m */; };
+		A741988520B2B28500665FCA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A741988420B2B28500665FCA /* ViewController.m */; };
+		A741988820B2B28500665FCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A741988620B2B28500665FCA /* Main.storyboard */; };
+		A741988A20B2B28800665FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A741988920B2B28800665FCA /* Assets.xcassets */; };
+		A741988D20B2B28800665FCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A741988B20B2B28800665FCA /* LaunchScreen.storyboard */; };
+		A741989020B2B28800665FCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A741988F20B2B28800665FCA /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A718C00220A2EBF7007EA5B5 /* Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Observer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A718C00520A2EBF7007EA5B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A718C00620A2EBF7007EA5B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A718C00820A2EBF7007EA5B5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A718C00920A2EBF7007EA5B5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A718C00C20A2EBF7007EA5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A718C00E20A2EBF8007EA5B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A718C01120A2EBF8007EA5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A718C01320A2EBF8007EA5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A718C01420A2EBF8007EA5B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A741987D20B2B28500665FCA /* IdleRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdleRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A741988020B2B28500665FCA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A741988120B2B28500665FCA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A741988320B2B28500665FCA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A741988420B2B28500665FCA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A741988720B2B28500665FCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A741988920B2B28800665FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A741988C20B2B28800665FCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A741988E20B2B28800665FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A741988F20B2B28800665FCA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A718BFFF20A2EBF7007EA5B5 /* Frameworks */ = {
+		A741987A20B2B28500665FCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A718BFF920A2EBF7007EA5B5 = {
+		A741987420B2B28500665FCA = {
 			isa = PBXGroup;
 			children = (
-				A718C00420A2EBF7007EA5B5 /* Observer */,
-				A718C00320A2EBF7007EA5B5 /* Products */,
+				A741987F20B2B28500665FCA /* IdleRun */,
+				A741987E20B2B28500665FCA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A718C00320A2EBF7007EA5B5 /* Products */ = {
+		A741987E20B2B28500665FCA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A718C00220A2EBF7007EA5B5 /* Observer.app */,
+				A741987D20B2B28500665FCA /* IdleRun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A718C00420A2EBF7007EA5B5 /* Observer */ = {
+		A741987F20B2B28500665FCA /* IdleRun */ = {
 			isa = PBXGroup;
 			children = (
-				A718C00520A2EBF7007EA5B5 /* AppDelegate.h */,
-				A718C00620A2EBF7007EA5B5 /* AppDelegate.m */,
-				A718C00820A2EBF7007EA5B5 /* ViewController.h */,
-				A718C00920A2EBF7007EA5B5 /* ViewController.m */,
-				A718C00B20A2EBF7007EA5B5 /* Main.storyboard */,
-				A718C00E20A2EBF8007EA5B5 /* Assets.xcassets */,
-				A718C01020A2EBF8007EA5B5 /* LaunchScreen.storyboard */,
-				A718C01320A2EBF8007EA5B5 /* Info.plist */,
-				A718C01420A2EBF8007EA5B5 /* main.m */,
+				A741988020B2B28500665FCA /* AppDelegate.h */,
+				A741988120B2B28500665FCA /* AppDelegate.m */,
+				A741988320B2B28500665FCA /* ViewController.h */,
+				A741988420B2B28500665FCA /* ViewController.m */,
+				A741988620B2B28500665FCA /* Main.storyboard */,
+				A741988920B2B28800665FCA /* Assets.xcassets */,
+				A741988B20B2B28800665FCA /* LaunchScreen.storyboard */,
+				A741988E20B2B28800665FCA /* Info.plist */,
+				A741988F20B2B28800665FCA /* main.m */,
 			);
-			path = Observer;
+			path = IdleRun;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A718C00120A2EBF7007EA5B5 /* Observer */ = {
+		A741987C20B2B28500665FCA /* IdleRun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A718C01820A2EBF8007EA5B5 /* Build configuration list for PBXNativeTarget "Observer" */;
+			buildConfigurationList = A741989320B2B28800665FCA /* Build configuration list for PBXNativeTarget "IdleRun" */;
 			buildPhases = (
-				A718BFFE20A2EBF7007EA5B5 /* Sources */,
-				A718BFFF20A2EBF7007EA5B5 /* Frameworks */,
-				A718C00020A2EBF7007EA5B5 /* Resources */,
+				A741987920B2B28500665FCA /* Sources */,
+				A741987A20B2B28500665FCA /* Frameworks */,
+				A741987B20B2B28500665FCA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Observer;
-			productName = Observer;
-			productReference = A718C00220A2EBF7007EA5B5 /* Observer.app */;
+			name = IdleRun;
+			productName = IdleRun;
+			productReference = A741987D20B2B28500665FCA /* IdleRun.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A718BFFA20A2EBF7007EA5B5 /* Project object */ = {
+		A741987520B2B28500665FCA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = lzackx;
 				TargetAttributes = {
-					A718C00120A2EBF7007EA5B5 = {
-						CreatedOnToolsVersion = 9.3;
+					A741987C20B2B28500665FCA = {
+						CreatedOnToolsVersion = 9.3.1;
 					};
 				};
 			};
-			buildConfigurationList = A718BFFD20A2EBF7007EA5B5 /* Build configuration list for PBXProject "Observer" */;
+			buildConfigurationList = A741987820B2B28500665FCA /* Build configuration list for PBXProject "IdleRun" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,55 +113,55 @@
 				en,
 				Base,
 			);
-			mainGroup = A718BFF920A2EBF7007EA5B5;
-			productRefGroup = A718C00320A2EBF7007EA5B5 /* Products */;
+			mainGroup = A741987420B2B28500665FCA;
+			productRefGroup = A741987E20B2B28500665FCA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A718C00120A2EBF7007EA5B5 /* Observer */,
+				A741987C20B2B28500665FCA /* IdleRun */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A718C00020A2EBF7007EA5B5 /* Resources */ = {
+		A741987B20B2B28500665FCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A718C01220A2EBF8007EA5B5 /* LaunchScreen.storyboard in Resources */,
-				A718C00F20A2EBF8007EA5B5 /* Assets.xcassets in Resources */,
-				A718C00D20A2EBF7007EA5B5 /* Main.storyboard in Resources */,
+				A741988D20B2B28800665FCA /* LaunchScreen.storyboard in Resources */,
+				A741988A20B2B28800665FCA /* Assets.xcassets in Resources */,
+				A741988820B2B28500665FCA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A718BFFE20A2EBF7007EA5B5 /* Sources */ = {
+		A741987920B2B28500665FCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A718C00A20A2EBF7007EA5B5 /* ViewController.m in Sources */,
-				A718C01520A2EBF8007EA5B5 /* main.m in Sources */,
-				A718C00720A2EBF7007EA5B5 /* AppDelegate.m in Sources */,
+				A741988520B2B28500665FCA /* ViewController.m in Sources */,
+				A741989020B2B28800665FCA /* main.m in Sources */,
+				A741988220B2B28500665FCA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A718C00B20A2EBF7007EA5B5 /* Main.storyboard */ = {
+		A741988620B2B28500665FCA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A718C00C20A2EBF7007EA5B5 /* Base */,
+				A741988720B2B28500665FCA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A718C01020A2EBF8007EA5B5 /* LaunchScreen.storyboard */ = {
+		A741988B20B2B28800665FCA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A718C01120A2EBF8007EA5B5 /* Base */,
+				A741988C20B2B28800665FCA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A718C01620A2EBF8007EA5B5 /* Debug */ = {
+		A741989120B2B28800665FCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -227,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		A718C01720A2EBF8007EA5B5 /* Release */ = {
+		A741989220B2B28800665FCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,35 +279,33 @@
 			};
 			name = Release;
 		};
-		A718C01920A2EBF8007EA5B5 /* Debug */ = {
+		A741989420B2B28800665FCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Observer/Info.plist;
+				INFOPLIST_FILE = IdleRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lzackx.Observer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lzackx.IdleRun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A718C01A20A2EBF8007EA5B5 /* Release */ = {
+		A741989520B2B28800665FCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Observer/Info.plist;
+				INFOPLIST_FILE = IdleRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lzackx.Observer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lzackx.IdleRun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -316,25 +314,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A718BFFD20A2EBF7007EA5B5 /* Build configuration list for PBXProject "Observer" */ = {
+		A741987820B2B28500665FCA /* Build configuration list for PBXProject "IdleRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A718C01620A2EBF8007EA5B5 /* Debug */,
-				A718C01720A2EBF8007EA5B5 /* Release */,
+				A741989120B2B28800665FCA /* Debug */,
+				A741989220B2B28800665FCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A718C01820A2EBF8007EA5B5 /* Build configuration list for PBXNativeTarget "Observer" */ = {
+		A741989320B2B28800665FCA /* Build configuration list for PBXNativeTarget "IdleRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A718C01920A2EBF8007EA5B5 /* Debug */,
-				A718C01A20A2EBF8007EA5B5 /* Release */,
+				A741989420B2B28800665FCA /* Debug */,
+				A741989520B2B28800665FCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A718BFFA20A2EBF7007EA5B5 /* Project object */;
+	rootObject = A741987520B2B28500665FCA /* Project object */;
 }
