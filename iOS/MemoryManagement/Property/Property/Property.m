@@ -34,7 +34,7 @@
     if (self) {
         _i = 0;
         _string = @"";
-        _number = @"";
+        _number = @0;
         _rb = NO;
     }
     return self;
