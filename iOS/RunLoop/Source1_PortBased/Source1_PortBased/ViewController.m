@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     /*
-     在iOS中，尤其是较新的系统版本中，Foundation封装的Port Based input source（即Source0）
+     在iOS中，尤其是较新的系统版本中，Foundation封装的Port Based input source（即Source1）
      的API使用限制非常多，步步是坑，一切需以实际情况为准。
      */
     [self runFoundationSource1];
