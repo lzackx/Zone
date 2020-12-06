@@ -23,7 +23,7 @@
      在iOS中，尤其是较新的系统版本中，Foundation封装的Port Based input source（即Source1）
      的API使用限制非常多，步步是坑，一切需以实际情况为准。
      */
-    [self runFoundationSource1];
+//    [self runFoundationSource1];
     [self runCoreFoundationSource1];
 }
 
@@ -198,7 +198,7 @@ CFDataRef coreFoundationSourceHandler(CFMessagePortRef local,
 - (void)runCoreFoundationSource1 {
     
     CFStringRef clientPortName = CFStringCreateWithFormat(NULL, NULL, CFSTR("com.lzackx.port.client"));
-//    [self createCoreFoundationLocalPortWithPortName:&clientPortName];
+    [self createCoreFoundationLocalPortWithPortName:&clientPortName];
 //    [self createCoreFoundationRemotePort];
     [self sendCoreFoundationMessageFromClientPortName:&clientPortName];
     CFRelease(clientPortName);
