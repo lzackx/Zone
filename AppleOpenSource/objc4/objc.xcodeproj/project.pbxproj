@@ -100,6 +100,8 @@
 		83F550E0155E030800E95D3B /* objc-cache-old.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83F550DF155E030800E95D3B /* objc-cache-old.mm */; };
 		87BB4EA70EC39854005D08E1 /* objc-probes.d in Sources */ = {isa = PBXBuildFile; fileRef = 87BB4E900EC39633005D08E1 /* objc-probes.d */; };
 		9672F7EE14D5F488007CEC96 /* NSObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9672F7ED14D5F488007CEC96 /* NSObject.mm */; };
+		A7DC9FAF2586178F00BE079C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7DC9FAE2586178F00BE079C /* CoreFoundation.framework */; };
+		A7DC9FB12586179A00BE079C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7DC9FB02586179A00BE079C /* Foundation.framework */; };
 		BC07A00C0EF72D360014EC61 /* objc-auto-dump.h in Headers */ = {isa = PBXBuildFile; fileRef = BC07A00B0EF72D360014EC61 /* objc-auto-dump.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BC07A0110EF72D9C0014EC61 /* objc-auto-dump.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC07A0100EF72D9C0014EC61 /* objc-auto-dump.mm */; };
 		E8923DA1116AB2820071B552 /* a1a2-blocktramps-i386.s in Sources */ = {isa = PBXBuildFile; fileRef = E8923D9C116AB2820071B552 /* a1a2-blocktramps-i386.s */; };
@@ -203,6 +205,9 @@
 		83F550DF155E030800E95D3B /* objc-cache-old.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-cache-old.mm"; path = "runtime/objc-cache-old.mm"; sourceTree = "<group>"; };
 		87BB4E900EC39633005D08E1 /* objc-probes.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; name = "objc-probes.d"; path = "runtime/objc-probes.d"; sourceTree = "<group>"; };
 		9672F7ED14D5F488007CEC96 /* NSObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSObject.mm; path = runtime/NSObject.mm; sourceTree = "<group>"; };
+		A7DC9FAD2586178800BE079C /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
+		A7DC9FAE2586178F00BE079C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		A7DC9FB02586179A00BE079C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC07A00B0EF72D360014EC61 /* objc-auto-dump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "objc-auto-dump.h"; path = "runtime/objc-auto-dump.h"; sourceTree = "<group>"; };
 		BC07A0100EF72D9C0014EC61 /* objc-auto-dump.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-auto-dump.mm"; path = "runtime/objc-auto-dump.mm"; sourceTree = "<group>"; };
 		BC8B5D1212D3D48100C78A5B /* libauto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libauto.dylib; path = /usr/lib/libauto.dylib; sourceTree = "<absolute>"; };
@@ -219,6 +224,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DC9FAF2586178F00BE079C /* CoreFoundation.framework in Frameworks */,
+				A7DC9FB12586179A00BE079C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +244,7 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				838485B20D6D67F900CEA253 /* Other */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
+				A7DC9FAC2586178800BE079C /* Frameworks */,
 			);
 			name = objc;
 			sourceTree = "<group>";
@@ -388,6 +396,16 @@
 			name = "Project Headers";
 			sourceTree = "<group>";
 		};
+		A7DC9FAC2586178800BE079C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7DC9FB02586179A00BE079C /* Foundation.framework */,
+				A7DC9FAE2586178F00BE079C /* CoreFoundation.framework */,
+				A7DC9FAD2586178800BE079C /* libobjc.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -461,7 +479,6 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = NO;
 				LastUpgradeCheck = 0440;
 				TargetAttributes = {
 					837F67A81A771F63004D34FA = {
