@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:dyld/dyld.xcodeproj">
+      location = "group:objc4-781/objc.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:objc4/objc.xcodeproj">
+      location = "group:dyld/dyld.xcodeproj">
    </FileRef>
 </Workspace>
