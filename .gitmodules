@@ -1,0 +1,3 @@
+[submodule "Apple/swift"]
+	path = Apple/swift
+	url = git@github.com:apple/swift.git
