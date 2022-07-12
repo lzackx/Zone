@@ -1,3 +1,6 @@
 [submodule "Apple/swift"]
 	path = Apple/swift
 	url = git@github.com:apple/swift.git
+[submodule "Apple/llvm-project"]
+	path = Apple/llvm-project
+	url = git@github.com:apple/llvm-project.git
