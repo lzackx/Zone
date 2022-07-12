@@ -4,3 +4,6 @@
 [submodule "Apple/llvm-project"]
 	path = Apple/llvm-project
 	url = git@github.com:apple/llvm-project.git
+[submodule "Apple/WebKit"]
+	path = Apple/WebKit
+	url = git@github.com:WebKit/WebKit.git
