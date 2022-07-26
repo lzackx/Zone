@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:LinearList/LinearList.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SinglyLinkedList/SinglyLinkedList.xcodeproj">
    </FileRef>
 </Workspace>
