@@ -16,6 +16,7 @@ SinglyLinkedList::SinglyLinkedList() {
 }
 
 SinglyLinkedList::~SinglyLinkedList() {
+    this->clearNode();
     delete header;
 }
 
@@ -28,16 +29,16 @@ bool SinglyLinkedList::empty() {
 }
 
 int SinglyLinkedList::length() {
-    int index = 0;
+    int count = 0;
     if (this->empty()) {
-        return index;
+        return count;
     }
     struct Node *currentNode = this->header;
     while (currentNode->next != nullptr) {
-        index += 1;
+        count += 1;
         currentNode = currentNode->next;
     }
-    return index;
+    return count;
 }
 
 struct Node* SinglyLinkedList::createNode(int data) {
@@ -66,45 +67,43 @@ void SinglyLinkedList::addNode(struct Node *node) {
     tail->next = node;
 }
 struct Node *SinglyLinkedList::getNode(int index) {
-    if (this->length() < index) {
+    if (index < 0 || this->length() <= index) {
         return nullptr;
     }
-    
-    struct Node *currentNode = this->header->next;
-    for (int i = 0; i < index; i++) {
+    struct Node *currentNode = this->header;
+    for (int i = 0; i <= index; i++) {
         currentNode = currentNode->next;
     }
     return currentNode;
 }
 
 void SinglyLinkedList::insertNode(struct Node *node, int index) {
-    if (this->length() < index) {
+    if (this->length() <= index) {
         return;
     }
     if (node == NULL) {
         return;
     }
-    struct Node *currentNode = this->getNode(index);
-    node->next = currentNode->next;
-    currentNode->next = node;
+    struct Node *prefixNode = this->getNode(index - 1);
+    node->next = prefixNode->next;
+    prefixNode->next = node;
 }
 
 void SinglyLinkedList::deleteNode(int index) {
     if (this->length() < index) {
         return;
     }
-    struct Node *currentNode = this->header->next;
-    struct Node *lastNode = currentNode;
-    for (int i = 0; i < index; i++) {
-        lastNode = currentNode;
-        currentNode = currentNode->next;
-    }
-    lastNode->next = currentNode->next;
-    delete currentNode;
+    struct Node *prefixNode = this->getNode(index - 1);
+    struct Node *targetNode = prefixNode->next;
+    prefixNode->next = targetNode->next;
+    delete targetNode;
 }
 
 void SinglyLinkedList::clearNode() {
-    struct Node *currentNode = this->header->next;
+    if (this->header->next == nullptr) {
+        return;
+    }
+    struct Node *currentNode = this->header;
     struct Node *lastNode = currentNode;
     int length = this->length();
     for (int i = 0; i < length; i++) {
@@ -119,10 +118,10 @@ void SinglyLinkedList::traverseNode(std::function<void (struct Node *)> lambda) 
     if (lambda == nullptr) {
         return;
     }
-    struct Node *currentNode = this->header->next;
+    struct Node *currentNode = this->header;
     int length = this->length();
     for (int i = 0; i < length; i++) {
+        currentNode = this->getNode(i);
         lambda(currentNode);
-        currentNode = currentNode->next;
     }
 }
