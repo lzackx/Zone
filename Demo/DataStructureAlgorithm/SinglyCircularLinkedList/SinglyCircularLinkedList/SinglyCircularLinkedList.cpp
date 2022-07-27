@@ -75,15 +75,16 @@ void SinglyCircularLinkedList::deleteNode(int index) {
     struct Node *previousNode = nullptr;
     if ((index - 1) < 0) { // index is first valid node
         previousNode = this->getNode(this->length - 1);
-        this->header->next = this->getNode(1);
     } else {
         previousNode = this->getNode(index - 1);
     }
     struct Node *targetNode = previousNode->next;
-    
     previousNode->next = targetNode->next;
     delete targetNode;
     this->length -= 1;
+    if (targetNode == this->header->next) {
+        this->header->next = targetNode->next;
+    }
 }
 
 void SinglyCircularLinkedList::clearNodes() {
