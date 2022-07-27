@@ -7,4 +7,13 @@
    <FileRef
       location = "group:SinglyLinkedList/SinglyLinkedList.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SinglyCircularLinkedList/SinglyCircularLinkedList.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DoublyLinkedList/DoublyLinkedList.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DoublyCircularLinkedList/DoublyCircularLinkedList.xcodeproj">
+   </FileRef>
 </Workspace>
