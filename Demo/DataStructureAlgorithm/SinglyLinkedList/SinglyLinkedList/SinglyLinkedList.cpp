@@ -78,7 +78,7 @@ struct Node *SinglyLinkedList::getNode(int index) {
 }
 
 void SinglyLinkedList::insertNode(struct Node *node, int index) {
-    if (this->length() <= index) {
+    if (this->length() < index) {
         return;
     }
     if (node == NULL) {

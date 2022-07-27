@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
     
     // insert
     struct Node *insertNode = list->createNode(-1);
-    list->insertNode(insertNode, 5);
+    list->insertNode(insertNode, 10);
     printList(list);
     
     // delete
