@@ -34,12 +34,12 @@ void SinglyCircularLinkedList::addNode(struct Node *node) {
         tailNode = tailNode->next;
     }
     tailNode->next = node;
-    node->next = this->header;
+    node->next = this->header->next;
     this->length += 1;
 }
 
 struct Node* SinglyCircularLinkedList::getNode(int index) {
-    if (index < 0 || this->length <= index) {
+    if (index < 0 || this->length < index) {
         return nullptr;
     }
     struct Node *currentNode = this->header;
@@ -63,6 +63,9 @@ void SinglyCircularLinkedList::insertNode(int index, struct Node *node) {
     node->next = nextNode;
     previousNode->next = node;
     this->length += 1;
+    if (nextNode == this->header->next) {
+        this->header->next = node;
+    }
 }
 
 void SinglyCircularLinkedList::deleteNode(int index) {
