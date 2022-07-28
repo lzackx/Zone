@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7CE159B28915540003C970F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7CE159A28915540003C970F /* main.cpp */; };
+		A7D1ED00289228DC00715CD6 /* DoublyLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7D1ECFE289228DC00715CD6 /* DoublyLinkedList.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		A7CE159728915540003C970F /* DoublyLinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DoublyLinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE159A28915540003C970F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A7D1ECFE289228DC00715CD6 /* DoublyLinkedList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DoublyLinkedList.cpp; sourceTree = "<group>"; };
+		A7D1ECFF289228DC00715CD6 /* DoublyLinkedList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DoublyLinkedList.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				A7CE159A28915540003C970F /* main.cpp */,
+				A7D1ECFE289228DC00715CD6 /* DoublyLinkedList.cpp */,
+				A7D1ECFF289228DC00715CD6 /* DoublyLinkedList.hpp */,
 			);
 			path = DoublyLinkedList;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CE159B28915540003C970F /* main.cpp in Sources */,
+				A7D1ED00289228DC00715CD6 /* DoublyLinkedList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

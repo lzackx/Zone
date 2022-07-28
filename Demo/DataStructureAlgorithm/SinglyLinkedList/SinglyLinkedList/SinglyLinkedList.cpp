@@ -67,6 +67,9 @@ void SinglyLinkedList::addNode(struct Node *node) {
     tail->next = node;
 }
 struct Node *SinglyLinkedList::getNode(int index) {
+    if (index == -1) {
+        return this->header;
+    }
     if (index < 0 || this->length() <= index) {
         return nullptr;
     }
