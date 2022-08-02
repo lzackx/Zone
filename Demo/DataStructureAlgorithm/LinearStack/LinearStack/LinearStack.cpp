@@ -16,9 +16,14 @@ LinearStack::LinearStack(int capacity) {
 }
 
 LinearStack::~LinearStack() {
-    this->top = 0;
+    this->top = -1;
     free(this->data);
     this->capacity = 0;
+}
+
+int LinearStack::length() {
+    int length = this->top + 1;
+    return length;
 }
 
 void LinearStack::push(int data) {
@@ -52,5 +57,9 @@ void LinearStack::traverse(std::function<void(int index, int data)> lambda) {
             lambda(index, data);
         }
     }
+}
+
+void LinearStack::clear() {
+    this->top = -1;
 }
 

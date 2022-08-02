@@ -20,12 +20,16 @@ public:
     LinearStack(int capacity);
     ~LinearStack();
     
+    int length();
+    
     void push(int data);
     int pop();
     
     int get();
     
     void traverse(std::function<void(int index, int data)> lambda);
+    
+    void clear();
     
 };
 

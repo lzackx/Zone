@@ -13,7 +13,7 @@ void printStack(LinearStack *list) {
     std::cout << "top:" << list->top << "\n[";
     list->traverse([&](int index, int data) {
         std::cout << data;
-        if (index < list->capacity && 0 < index) {
+        if (index < list->length() && 0 < index) {
             std::cout << ", ";
         }
     });
