@@ -16,4 +16,10 @@
    <FileRef
       location = "group:DoublyCircularLinkedList/DoublyCircularLinkedList.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:LinearStack/LinearStack.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LinkedStack/LinkedStack.xcodeproj">
+   </FileRef>
 </Workspace>
