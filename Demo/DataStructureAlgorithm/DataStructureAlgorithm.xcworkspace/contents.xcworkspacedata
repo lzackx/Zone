@@ -22,4 +22,10 @@
    <FileRef
       location = "group:LinkedStack/LinkedStack.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:LinearQueue/LinearQueue.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LinkedQueue/LinkedQueue.xcodeproj">
+   </FileRef>
 </Workspace>
