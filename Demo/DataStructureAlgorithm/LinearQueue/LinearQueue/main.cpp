@@ -13,9 +13,7 @@ void printStack(LinearQueue *list) {
     std::cout << "length:" << list->length() << "\n[";
     list->traverse([&](int index, int data) {
         std::cout << data;
-        if (index < (list->tailer - 1)) {
-            std::cout << ", ";
-        }
+        std::cout << ", ";
     });
     std::cout << "]\n";
 }
@@ -32,10 +30,22 @@ int main(int argc, const char * argv[]) {
     printStack(queue);
 
 
-    // delete
+    // dequeue
     int data = queue->dequeue();
     std::cout << "dequeue: " << data << "\n";
     printStack(queue);
-        
+    
+    data = queue->dequeue();
+    std::cout << "dequeue: " << data << "\n";
+    printStack(queue);
+    
+    // 
+    queue->enqueue(11);
+    printStack(queue);
+    
+    data = queue->dequeue();
+    std::cout << "dequeue: " << data << "\n";
+    printStack(queue);
+    
     return 0;
 }
