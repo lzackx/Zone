@@ -11,25 +11,28 @@
 #include <stdio.h>
 #include <functional>
 
+struct Node {
+    int data;
+    struct Node *next;
+};
+
 class LinkedQueue {
 public:
     
-    int *header;
-    int *tailer;
+    Node *header; // Queue Head
+    Node *tailer; // Queue Tail
     
-    LinkedQueue(int capacity);
+    LinkedQueue();
     ~LinkedQueue();
     
+    Node *createNode(int data);
     int length();
-    
     bool isEmpty();
     
-    int get(int index);
+    void enqueue(Node *data);
+    Node* dequeue();
     
-    void enqueue(int data);
-    int dequeue();
-    
-    void traverse(std::function<void(int index, int data)> lambda);
+    void traverse(std::function<void(Node *data)> lambda);
     
     void clear();
     

@@ -9,7 +9,7 @@
 #include "LinearQueue.hpp"
 
 
-void printStack(LinearQueue *list) {
+void printQueue(LinearQueue *list) {
     std::cout << "length:" << list->length() << "\n[";
     list->traverse([&](int index, int data) {
         std::cout << data;
@@ -21,31 +21,31 @@ void printStack(LinearQueue *list) {
 int main(int argc, const char * argv[]) {
     
     LinearQueue *queue = new LinearQueue(10);
-    printStack(queue);
+    printQueue(queue);
 
     // enqueue
     for (int i = 0; i < queue->capacity; i++) {
         queue->enqueue(i);
     }
-    printStack(queue);
+    printQueue(queue);
 
 
     // dequeue
     int data = queue->dequeue();
     std::cout << "dequeue: " << data << "\n";
-    printStack(queue);
+    printQueue(queue);
     
     data = queue->dequeue();
     std::cout << "dequeue: " << data << "\n";
-    printStack(queue);
+    printQueue(queue);
     
     // 
     queue->enqueue(11);
-    printStack(queue);
+    printQueue(queue);
     
     data = queue->dequeue();
     std::cout << "dequeue: " << data << "\n";
-    printStack(queue);
+    printQueue(queue);
     
     return 0;
 }
